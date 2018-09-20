@@ -1,6 +1,6 @@
 dashboardPage(
   dashboardHeader(title = "take2",
-                  tags$li("variable forthcoming",
+                  tags$li(verbatimTextOutput("date_text"),
                   class = "dropdown")),
   dashboardSidebar(tags$li("this is the sidebar"),
                    dateInput("date", "enter a date")),
