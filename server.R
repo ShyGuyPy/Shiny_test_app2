@@ -27,7 +27,7 @@ shinyServer(function(input, output, session){
                 
                 
                 precip_value <- reactive({case_when(
-                  data_percent <= .0 ~ "purple", #"#000000",
+                  data_percent <= .0 ~ "backgroun-color:purple", #"#000000",
                   data_percent > .0 && data_percent <= .20 ~ "background-color:red", #"#cc3300",
                   data_percent > .20 && data_percent <= .40 ~ "background-color:orange",  #"#ff9966",
                   data_percent > .40 && data_percent <= .60 ~ "background-color:yellow",  #"#ffcc00",
