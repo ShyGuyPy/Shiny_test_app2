@@ -33,7 +33,7 @@ h1{
     padding-bottom : 40%; /* = width for a 1:1 aspect ratio */
     margin:1.66%;
     overflow:hidden;
-    background-color:red;
+    /*background-color:red;*/
 }
 
 .content {
