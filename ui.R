@@ -6,15 +6,19 @@ dashboardPage(
                    dateInput("date", "enter a date")),
   dashboardBody(    tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "CSS/main.css")
-  )#,
+  ),
 
     #tags$li("this is a test document...like the many before it ...and the many to come...")#,
   
     #sliderInput(inputId = "my_slider",label = "test", min = 1,max = 10, value = 5)
+  sliderInput(inputId = "data_index", 
+                       label = "test_slider", 
+                       value = 1, min = 1, max = 427)
   ,
+  
   div(class="topbox_main",
     div(class="topbox1",
-        div(class="square", style="background-color:yellow",
+        div(class="square", style="precip_value",#"background-color:yellow",
             div(class="content",
                 div(class="table",
                     div(class="table-cell",
