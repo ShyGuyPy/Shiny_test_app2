@@ -12,21 +12,21 @@ shinyServer(function(input, output, session){
                 
                 my_data = read.csv(path)
                 
-                limit <- length(my_data[[1]])
-                random <- sample(1:limit,1)
+                # limit <- length(my_data[[1]])
+                # random <- sample(1:limit,1)
                 
-                # current_index <- reactive({
-                #   input$data_index
+                observeEvent(input$data_index {
                 
-                
-                data_percent <- reactive({my_data$p_percent_normal[current_index]})
-                data_date <- reactive({my_data$date[current_index]})
+                current_index <- input$data_index,
+                data_percent <- my_data$p_percent_normal[current_index],
+                data_date <- my_data$date[current_index]
+                })
                 
                 #data_percent <- reactive({my_data$p_percent_normal[input$data_index]})
                 #data_date <- reactive({my_data$date[input$data_index]})
                 
                 
-                precip_value <- reactive({case_when(
+                precip_value <- case_when(
                   data_percent <= .0 ~ "backgroun-color:purple", #"#000000",
                   data_percent > .0 && data_percent <= .20 ~ "background-color:red", #"#cc3300",
                   data_percent > .20 && data_percent <= .40 ~ "background-color:orange",  #"#ff9966",
@@ -35,5 +35,61 @@ shinyServer(function(input, output, session){
                   data_percent > .80 && data_percent < 1 ~  "background-color:navy" #"#339900"
                 )
           
-              })
+              
+                output$boxes  <- renderUI({
+                  div(class="topbox_main",
+                      div(class="topbox1",
+                          div(class="square", style=precip_value,#"background-color:yellow"
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("precipitation deficit")
+                                      )))), 
+                          div(class="square", style="background-color:red",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("ground water wells")
+                                      )))),
+                          div(class="square", style="background-color:green",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("reservoir flow")
+                                      )))),
+                          div(class="square", style="background-color:orange",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("streamflow")
+                                      ))))
+                      ), #end of topbox1
+                      div(class="topbox2", 
+                          div(class="square", style="background-color:yellow",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("precipitation deficit")
+                                      )))),
+                          div(class="square", style="background-color:orange",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("ground water wells")
+                                      )))),
+                          div(class="square", style="background-color:red",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("reservoir flow")
+                                      )))),
+                          div(class="square", style="background-color:green",
+                              div(class="content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p("streamflow")
+                                      ))))
+                      ) #end of topbox2
+                  ) #end of topbox-main
+                })
 })

@@ -13,63 +13,10 @@ dashboardPage(
     #sliderInput(inputId = "my_slider",label = "test", min = 1,max = 10, value = 5)
   sliderInput(inputId = "data_index", 
                        label = "test_slider", 
-                       value = 1, min = 1, max = 427)
-  ,
+                       value = 1, min = 1, max = 427),
+  htmlOutput(outputId = "boxes")
   
-  div(class="topbox_main",
-    div(class="topbox1",
-        div(class="square", style="precip_value",#"background-color:yellow",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("precipitation deficit")
-                    )))), 
-        div(class="square", style="background-color:red",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("ground water wells")
-                    )))),
-        div(class="square", style="background-color:green",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("reservoir flow")
-                    )))),
-        div(class="square", style="background-color:orange",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("streamflow")
-                    ))))
-    ), #end of topbox1
-    div(class="topbox2", 
-        div(class="square", style="background-color:yellow",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("precipitation deficit")
-                    )))),
-        div(class="square", style="background-color:orange",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("ground water wells")
-                    )))),
-        div(class="square", style="background-color:red",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("reservoir flow")
-                    )))),
-        div(class="square", style="background-color:green",
-            div(class="content",
-                div(class="table",
-                    div(class="table-cell",
-                        p("streamflow")
-                    ))))
-    ) #end of topbox2
-  ) #end of topbox-main
+  
     
   )
   
