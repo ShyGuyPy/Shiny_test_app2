@@ -13,7 +13,7 @@ dashboardPage(
     #sliderInput(inputId = "my_slider",label = "test", min = 1,max = 10, value = 5)
   sliderInput(inputId = "data_index", 
                        label = "test_slider", 
-                       value = 1, min = 1, max = 427),
+                       value = 2, min = 2, max = 427),
   htmlOutput(outputId = "boxes")
   
   

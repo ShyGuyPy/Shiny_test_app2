@@ -15,31 +15,32 @@ shinyServer(function(input, output, session){
                 # limit <- length(my_data[[1]])
                 # random <- sample(1:limit,1)
                 
-                observeEvent(input$data_index {
-                
-                current_index <- input$data_index,
-                data_percent <- my_data$p_percent_normal[current_index],
-                data_date <- my_data$date[current_index]
+                #takes slider input and outputs percent value for that index
+                data_percent <- eventReactive(input$data_index, {
+                #current_index <- input$data_index,
+                my_data$p_percent_normal[input$data_index]
+                #data_date <- my_data$date[input$data_index]
                 })
                 
                 #data_percent <- reactive({my_data$p_percent_normal[input$data_index]})
                 #data_date <- reactive({my_data$date[input$data_index]})
                 
-                
-                precip_value <- case_when(
-                  data_percent <= .0 ~ "backgroun-color:purple", #"#000000",
-                  data_percent > .0 && data_percent <= .20 ~ "background-color:red", #"#cc3300",
-                  data_percent > .20 && data_percent <= .40 ~ "background-color:orange",  #"#ff9966",
-                  data_percent > .40 && data_percent <= .60 ~ "background-color:yellow",  #"#ffcc00",
-                  data_percent > .60 && data_percent <= .80 ~ "background-color:green", #"#99cc33",
-                  data_percent > .80 && data_percent < 1 ~  "background-color:navy" #"#339900"
+                precip_value <- eventReactive(data_index,{
+                case_when(
+                  data_percent() <= .0 ~ "background-color:purple", #"#000000",
+                  data_percent() > .0 && data_percent() <= .20 ~ navy,#"background-color:red", #"#cc3300",
+                  data_percent() > .20 && data_percent() <= .40 ~ orange,#"background-color:orange",  #"#ff9966",
+                  data_percent() > .40 && data_percent() <= .60 ~ yellow,#"background-color:yellow",  #"#ffcc00",
+                  data_percent() > .60 && data_percent() <= .80 ~ green,#"background-color:green", #"#99cc33",
+                  data_percent() > .80 && data_percent() < 1 ~  navy #"background-color:navy" #"#339900"
                 )
+                })
           
               
                 output$boxes  <- renderUI({
                   div(class="topbox_main",
                       div(class="topbox1",
-                          div(class="square", style=precip_value,#"background-color:yellow"
+                          div(class="square", style=precip_value(),#"background-color:yellow"
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
