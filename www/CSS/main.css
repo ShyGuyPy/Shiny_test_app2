@@ -1,16 +1,16 @@
-p{
-/*background-color: yellow;*/
+/*p{
+
 color: blue;
 font-size:10px;
-}
+}*/
 li{
   color: white;
   font-size: 30px;
   font:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-h1{
+/*h1{
   color: green;
-}
+}*/
 .topbox_main{
   width:250px;
 }
@@ -38,9 +38,13 @@ h1{
 
 .content {
     position:absolute;
-    height:80%; 
-    width:90%; 
-    padding: 10% 5%;
+    font-size:12px;
+    color:white;
+    
+    /*height:80%; 
+    width:90%;
+    padding: 10% 5%;8?
+    /*background-color: blue;*/
 }
 
 .table{
