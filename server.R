@@ -24,8 +24,14 @@ shinyServer(function(input, output, session){
                 my_data_g = read.csv(path_g)
                 
                 #takes slider input and outputs percent value for that index
-                p_data_percent <- eventReactive(input$data_index, {
-                my_data_p$p_percent_normal[input$data_index]
+                p_data_percent <- eventReactive(input$date, {
+                  for(i in my_data_p){
+                    case_when(
+                      i ==input$date ~ i[2]
+                    )
+                    #if i == input$date,
+                    }
+                #my_data_p$p_percent_normal[input$data_index]
                 })
               
                 

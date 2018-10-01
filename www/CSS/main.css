@@ -39,6 +39,8 @@ li{
 .content {
     position:absolute;
     font-size:12px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:white;
     
     /*height:80%; 
