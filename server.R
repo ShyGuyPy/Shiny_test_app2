@@ -70,7 +70,7 @@ shinyServer(function(input, output, session){
                     s_data_percent() > 70 && s_data_percent() <= 85 ~ orange,#"background-color:orange",  #"#ff9966",
                     s_data_percent() > 85 && s_data_percent() <= 100 ~ yellow,#"background-color:yellow",  #"#ffcc00",
                     s_data_percent() > 100 && s_data_percent() <= 115 ~ green,#"background-color:green", #"#99cc33",
-                    s_data_percent() > 115 && s_data_percent() < 130 ~  navy, #"background-color:navy" #"#339900"
+                    s_data_percent() > 115 && s_data_percent() <= 130 ~  navy, #"background-color:navy" #"#339900"
                     TRUE ~ black
                   )
                 })
@@ -99,25 +99,25 @@ shinyServer(function(input, output, session){
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("precipitation deficit")
+                                          p("p")
                                       )))), 
                           div(class="square", style=g_value(),#"background-color:red",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("ground water wells")
+                                          p("g")
                                       )))),
                           div(class="square", style=q_value(),#"background-color:green",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("reservoir flow")
+                                          p("q")
                                       )))),
                           div(class="square", style=s_value(),#"background-color:orange",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("streamflow")
+                                          p("s")
                                       ))))
                       ), #end of topbox1
                       div(class="topbox2", 
