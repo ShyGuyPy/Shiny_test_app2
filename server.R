@@ -23,14 +23,15 @@ shinyServer(function(input, output, session){
                 my_data_s = read.csv(path_s)
                 my_data_g = read.csv(path_g)
                 
-                #takes slider input and outputs percent value for that index
-                p_data_percent <- eventReactive(date_func(as.character(input$date)), {
-                  for(i in 2:nrow(my_data_p)){
+                #takes date input and outputs percent value for that date
+                p_data_percent <- eventReactive(as.character(input$date), {
+                  for(i in my_data_p$date){
+                    #print(i)
                     case_when(
-                      i ==input$date ~ my_data_p[[2]][i]
-                    )
-                    #if i == input$date,
-                    }
+                    as.character(i) == input$date~ my_data_p$p_percent_normal[i])
+                    #print(my_data_p[[i]])
+                  }
+                  
                 #my_data_p$p_percent_normal[input$data_index]
                 })
               
@@ -64,7 +65,7 @@ shinyServer(function(input, output, session){
                     TRUE ~ black
                   )
                 })
-                
+                #slider...
                 s_data_percent <- eventReactive(input$data_index, {
                   my_data_s$storage_days[input$data_index]
                 })
