@@ -1,5 +1,7 @@
 source("code/global/load_packages.R", local = TRUE)
 
+
+source("code/functions/date_func.R", local = TRUE)
 #data_percent <- 0
 #precip_value <-"background-color:green"
 #potato <- "background-color:navy"
