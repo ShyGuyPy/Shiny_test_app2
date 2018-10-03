@@ -3,7 +3,7 @@ dashboardPage(
                   tags$li(textOutput("date_text"),
                   class = "dropdown")),
   dashboardSidebar(#tags$li("this is the sidebar"),
-                   dateInput(inputId = "date", label = "enter a date")),
+                   dateInput(inputId = "date", label = "enter a date", value = "1998-10-04")),
   dashboardBody(    tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "CSS/main.css")
   ),
@@ -14,7 +14,8 @@ dashboardPage(
   sliderInput(inputId = "data_index", 
                        label = "slide to data index", 
                        value = 2, min = 2, max = 427),
-  htmlOutput(outputId = "boxes")
+  htmlOutput(outputId = "boxes"),
+  htmlOutput(outputId = "test_output1")
   
   
     

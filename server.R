@@ -26,10 +26,10 @@ shinyServer(function(input, output, session){
                 #takes date input and outputs percent value for that date
                 p_data_percent <- eventReactive(input$date, {
                   for(i in my_data_p$date){
-                    #print(i)
+
                     case_when(
-                    as.character(i) == date_func(as.character(input$date))~ as.character(my_data_p$p_percent_normal[which(my_data_p$date == i)]))
-                    #print(my_data_p[[i]])
+                    as.character(i) == date_func(as.character(input$date))~ my_data_p$p_percent_normal[which(my_data_p$date == i)])
+                    
                   }
                   
                 #my_data_p$p_percent_normal[input$data_index]
@@ -155,5 +155,11 @@ shinyServer(function(input, output, session){
                                       ))))
                       ) #end of topbox2
                   ) #end of topbox-main
+                  
+
+                })
+                
+                output$test_output1  <- renderUI({
+                  div(style="color:black", as.character(p_data_percent()))
                 })
 })

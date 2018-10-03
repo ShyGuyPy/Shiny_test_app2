@@ -1,6 +1,6 @@
 #test function, for use on date input
 date_func <- function(date){
-  date <- "1990-05-17"
+  #date <- "1990-05-17"
   #date <- paste0(date,"-")
   month=""
   day="/"
@@ -22,7 +22,7 @@ date_func <- function(date){
     else if (i != "-" && nchar(day) <3 && day_single == FALSE) {day <- paste0(day,i)}
     
   }
-  date2 <- paste0(month,day, year)
-  return(date2)
+  date <- paste0(month,day, year)
+  return(date)
 }
 
