@@ -3,7 +3,7 @@ dashboardPage(
                   tags$li(textOutput("date_text"),
                   class = "dropdown")),
   dashboardSidebar(#tags$li("this is the sidebar"),
-                   dateInput("date", "enter a date")),
+                   dateInput(inputId = "date", label = "enter a date")),
   dashboardBody(    tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "CSS/main.css")
   ),

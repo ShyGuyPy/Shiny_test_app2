@@ -24,11 +24,11 @@ shinyServer(function(input, output, session){
                 my_data_g = read.csv(path_g)
                 
                 #takes date input and outputs percent value for that date
-                p_data_percent <- eventReactive(as.character(input$date), {
+                p_data_percent <- eventReactive(input$date, {
                   for(i in my_data_p$date){
                     #print(i)
                     case_when(
-                    as.character(i) == input$date~ my_data_p$p_percent_normal[i])
+                    as.character(i) == date_func(as.character(input$date))~ as.character(my_data_p$p_percent_normal[which(my_data_p$date == i)]))
                     #print(my_data_p[[i]])
                   }
                   
@@ -36,7 +36,7 @@ shinyServer(function(input, output, session){
                 })
               
                 
-                precip_value <- eventReactive(input$data_index,{
+                precip_value <- eventReactive(input$date,{#a_index,{
                 case_when(
                   p_data_percent() <= .0 ~ "background-color:purple", #"#000000",
                   p_data_percent() > .0 && p_data_percent() <= .20 ~ red,#"background-color:red", #"#cc3300",
