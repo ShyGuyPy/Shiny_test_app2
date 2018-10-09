@@ -5,23 +5,23 @@ shinyServer(function(input, output, session){
               })
 #   output$date_text <- renderText(as.character(input$date)))
               
-                path_p <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_p.csv"
-                path_q <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_q.csv"
-                path_s <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_stor.csv"
-                path_g <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_gw.csv"
-                
-                #for mac use
-                if( .Platform$OS.type == "unix" ) {
-                  path_p <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_p.csv"
-                  path_q <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_q.csv"
-                  path_s <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_stor.csv"
-                  path_g <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_gw.csv"
-                }
-                  
-                my_data_p = read.csv(path_p)
-                my_data_q = read.csv(path_q)
-                my_data_s = read.csv(path_s)
-                my_data_g = read.csv(path_g)
+                # path_p <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_p.csv"
+                # path_q <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_q.csv"
+                # path_s <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_stor.csv"
+                # path_g <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_gw.csv"
+                # 
+                # #for mac use
+                # if( .Platform$OS.type == "unix" ) {
+                #   path_p <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_p.csv"
+                #   path_q <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_q.csv"
+                #   path_s <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_stor.csv"
+                #   path_g <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_gw.csv"
+                # }
+                #   
+                # my_data_p = read.csv(path_p)
+                # my_data_q = read.csv(path_q)
+                # my_data_s = read.csv(path_s)
+                # my_data_g = read.csv(path_g)
                 
                 #takes date input and outputs percent value for that date
                 p_data_percent <- eventReactive(input$date, {
