@@ -1,7 +1,7 @@
 shinyServer(function(input, output, session){
 #eventReactive(input$date,
               output$date_text  <- renderText({
-                paste("Today's date is", as.character(input$date))
+                paste("Today's date is", as.character(test_date$test_date_value))
               })
 #   output$date_text <- renderText(as.character(input$date)))
               
@@ -24,11 +24,11 @@ shinyServer(function(input, output, session){
                 # my_data_g = read.csv(path_g)
                 
                 #takes date input and outputs percent value for that date
-                p_data_percent <- eventReactive(input$date, {
+                p_data_percent <- eventReactive(test_date$test_date_value, {
                   for(i in my_data_p$date){
 
                     case_when(
-                    as.character(i) == date_func(as.character(input$date))~ my_data_p$p_percent_normal[which(my_data_p$date == i)])
+                    as.character(i) == as.character(test_date$test_date_value)~ my_data_p$p_percent_normal[which(my_data_p$date == i)])
                     
                   }
                   
@@ -36,7 +36,7 @@ shinyServer(function(input, output, session){
                 })
               
                 
-                precip_value <- eventReactive(input$date,{#a_index,{
+                precip_value <- eventReactive(test_date$test_date_value,{#a_index,{
                 case_when(
                   p_data_percent() <= .0 ~ "background-color:purple", #"#000000",
                   p_data_percent() > .0 && p_data_percent() <= .20 ~ red,#"background-color:red", #"#cc3300",
@@ -162,4 +162,12 @@ shinyServer(function(input, output, session){
                 output$test_output1  <- renderUI({
                   div(style="color:black", as.character(p_data_percent()))
                 })
+                
+                
+                observeEvent(input$date, {
+                  test_date$test_date_value <- input$date
+                })
+                
+                test_date <- reactiveValues(test_date_value = "1930-05-01")
+                #
 })
