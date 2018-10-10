@@ -25,12 +25,13 @@ shinyServer(function(input, output, session){
                 
                 #takes date input and outputs percent value for that date
                 p_data_percent <- eventReactive(test_date$test_date_value, {
-                  for(i in my_data_p$date){
+                  date_func(my_data_p$date, my_data_p$p_percent_normal, test_date$test_date_value)
+                  
+                  #for(i in my_data_p$date){
+                    # case_when(
+                    # as.character(i) == as.character(test_date$test_date_value)~ my_data_p$p_percent_normal[which(my_data_p$date == i)])
 
-                    case_when(
-                    as.character(i) == as.character(test_date$test_date_value)~ my_data_p$p_percent_normal[which(my_data_p$date == i)])
-                    
-                  }
+                  #}
                   
                 #my_data_p$p_percent_normal[input$data_index]
                 })
@@ -48,12 +49,16 @@ shinyServer(function(input, output, session){
                 )
                   
                 })
-                q_data_percent <- eventReactive(input$data_index, {
-                  my_data_q$flow_cfs[input$data_index]
+                
+                q_data_percent <- eventReactive(test_date$test_date_value, {
+                  date_func(my_data_q$date, my_data_q$flow_cfs, test_date$test_date_value)
                 })
+                # q_data_percent <- eventReactive(input$data_index, {
+                #   my_data_q$flow_cfs[input$data_index]
+                # })
                 
                 
-                q_value <- eventReactive(input$data_index,{
+                q_value <- eventReactive(test_date$test_date_value,{
                   case_when(
                     q_data_percent() <= 0 ~ "background-color:purple", #"#000000",
                     q_data_percent() > 0 && q_data_percent() <= 100 ~ red,#"background-color:red", #"#cc3300",
@@ -65,27 +70,36 @@ shinyServer(function(input, output, session){
                     TRUE ~ black
                   )
                 })
-                #slider...
-                s_data_percent <- eventReactive(input$data_index, {
-                  my_data_s$storage_days[input$data_index]
+                
+                s_data_percent <- eventReactive(test_date$test_date_value, {
+                  date_func(my_data_s$date, my_data_s$storage_days, test_date$test_date_value)
                 })
+                
+                #slider...
+                # s_data_percent <- eventReactive(input$data_index, {
+                #   my_data_s$storage_days[input$data_index]
+                # })
                 
                 
                 s_value <- eventReactive(input$data_index,{
                   case_when(
-                    s_data_percent() <= .0 ~ "background-color:purple", #"#000000",
-                    s_data_percent() > 55 && s_data_percent() <= 70 ~ red,#"background-color:red", #"#cc3300",
-                    s_data_percent() > 70 && s_data_percent() <= 85 ~ orange,#"background-color:orange",  #"#ff9966",
-                    s_data_percent() > 85 && s_data_percent() <= 100 ~ yellow,#"background-color:yellow",  #"#ffcc00",
-                    s_data_percent() > 100 && s_data_percent() <= 115 ~ green,#"background-color:green", #"#99cc33",
-                    s_data_percent() > 115 && s_data_percent() <= 130 ~  navy, #"background-color:navy" #"#339900"
+                    s_data_percent() <= 0 ~ "background-color:purple", #"#000000",
+                    s_data_percent() > 0 && s_data_percent() <= 60 ~ red,#"background-color:red", #"#cc3300",
+                    s_data_percent() > 60 && s_data_percent() <= 90 ~ orange,#"background-color:orange",  #"#ff9966",
+                    s_data_percent() > 90 && s_data_percent() <= 120 ~ yellow,#"background-color:yellow",  #"#ffcc00",
+                    s_data_percent() > 120 && s_data_percent() <= 500 ~ green,#"background-color:green", #"#99cc33",
+                    s_data_percent() > 500 && s_data_percent() <= 1130 ~  navy, #"background-color:navy" #"#339900"
                     TRUE ~ black
                   )
                 })
                 
-                g_data_percent <- eventReactive(input$data_index, {
-                  my_data_g$flow_cfs[input$data_index]
+                g_data_percent <- eventReactive(test_date$test_date_value, {
+                  date_func(my_data_g$date, my_data_g$flow_cfs, test_date$test_date_value)
                 })
+                
+                # g_data_percent <- eventReactive(input$data_index, {
+                #   my_data_g$flow_cfs[input$data_index]
+                # })
                 
                 
                 g_value <- eventReactive(input$data_index,{
@@ -160,7 +174,11 @@ shinyServer(function(input, output, session){
                 })
                 
                 output$test_output1  <- renderUI({
-                  div(style="color:black", as.character(p_data_percent()))
+                  div(style="color:black", paste0("prepic is ", as.character(p_data_percent())),
+                  div(style="color:black", paste0("q is ", as.character(q_data_percent())),
+                  div(style="color:black", paste0("storage is ", as.character(s_data_percent())),
+                  div(style="color:black", paste0("ground water is ", as.character(g_data_percent()))
+                  ))))
                 })
                 
                 
