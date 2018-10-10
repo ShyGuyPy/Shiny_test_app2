@@ -14,11 +14,24 @@ dashboardPage(
   sliderInput(inputId = "data_index", 
                        label = "slide to data index", 
                        value = 2, min = 2, max = 427),
-  htmlOutput(outputId = "boxes"),
-  htmlOutput(outputId = "test_output1")
+  #htmlOutput(outputId = "boxes"),
+  htmlOutput(outputId = "test_output1"),
+  box(
+    title = "Shen DROUGHT STATUS",
+    width = 4,
+    htmlOutput(outputId = "boxes")#,
+    #tags$p("Western region: Drought Watch; Central region: Drought Warning")
+    ),
+  box(
+    title = "NoVa DROUGHT STATUS",
+    width = 4,
+    htmlOutput(outputId = "boxes2")
+    #"NoVa: Drought Watch; Shenandoah: Drought Emergency")
+  )
   
   
     
   )
   
 )
+

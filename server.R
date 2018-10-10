@@ -115,7 +115,7 @@ shinyServer(function(input, output, session){
                 })
               
                 output$boxes  <- renderUI({
-                  div(class="topbox_main",
+                  #div(class="topbox_main",
                       div(class="topbox1",
                           div(class="square", style=precip_value(),#"background-color:yellow"
                               div(class="content",
@@ -141,36 +141,40 @@ shinyServer(function(input, output, session){
                                       div(class="table-cell",
                                           p("s")
                                       ))))
-                      ), #end of topbox1
-                      div(class="topbox2", 
-                          div(class="square", style="background-color:yellow",
-                              div(class="content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("precipitation deficit")
-                                      )))),
-                          div(class="square", style="background-color:orange",
-                              div(class="content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("ground water wells")
-                                      )))),
-                          div(class="square", style="background-color:red",
-                              div(class="content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("reservoir flow")
-                                      )))),
-                          div(class="square", style="background-color:green",
-                              div(class="content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("streamflow")
-                                      ))))
-                      ) #end of topbox2
-                  ) #end of topbox-main
+                      )#, #end of topbox1
+                     
+                  #) #end of topbox-main
                   
 
+                })
+                
+                output$boxes2  <- renderUI({
+                  div(class="topbox2", 
+                      div(class="square", style="background-color:yellow",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p("precipitation deficit")
+                                  )))),
+                      div(class="square", style="background-color:orange",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p("ground water wells")
+                                  )))),
+                      div(class="square", style="background-color:red",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p("reservoir flow")
+                                  )))),
+                      div(class="square", style="background-color:green",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p("streamflow")
+                                  ))))
+                  ) #end of topbox2
                 })
                 
                 output$test_output1  <- renderUI({
@@ -188,4 +192,5 @@ shinyServer(function(input, output, session){
                 
                 test_date <- reactiveValues(test_date_value = "1930-05-01")
                 #
+                
 })
