@@ -81,7 +81,7 @@ shinyServer(function(input, output, session){
                 # })
                 
                 
-                s_value <- eventReactive(input$data_index,{
+                s_value <- eventReactive(test_date$test_date_value,{
                   case_when(
                     s_data_percent() <= 0 ~ "background-color:purple", #"#000000",
                     s_data_percent() > 0 && s_data_percent() <= 60 ~ red,#"background-color:red", #"#cc3300",
@@ -102,7 +102,7 @@ shinyServer(function(input, output, session){
                 # })
                 
                 
-                g_value <- eventReactive(input$data_index,{
+                g_value <- eventReactive(test_date$test_date_value,{
                   case_when(
                     g_data_percent() <= 0 ~ "background-color:purple", #"#000000",
                     g_data_percent() > 0 && g_data_percent() <= 55 ~ red,#"background-color:red", #"#cc3300",
