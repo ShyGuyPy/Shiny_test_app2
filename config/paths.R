@@ -1,0 +1,1 @@
+ts_path <- "input/ts/1929_1929prrism/"

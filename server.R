@@ -4,25 +4,7 @@ shinyServer(function(input, output, session){
                 paste("Today's date is", as.character(test_date$test_date_value))
               })
 #   output$date_text <- renderText(as.character(input$date)))
-              
-                # path_p <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_p.csv"
-                # path_q <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_q.csv"
-                # path_s <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_stor.csv"
-                # path_g <- "C:\\Users\\icprbadmin\\Documents\\R\\2018drex\\input\\ts\\state\\i_a1b\\va_shenandoah_gw.csv"
-                # 
-                # #for mac use
-                # if( .Platform$OS.type == "unix" ) {
-                #   path_p <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_p.csv"
-                #   path_q <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_q.csv"
-                #   path_s <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_stor.csv"
-                #   path_g <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_gw.csv"
-                # }
-                #   
-                # my_data_p = read.csv(path_p)
-                # my_data_q = read.csv(path_q)
-                # my_data_s = read.csv(path_s)
-                # my_data_g = read.csv(path_g)
-                
+            
                 #takes date input and outputs percent value for that date
                 p_data_percent <- eventReactive(test_date$test_date_value, {
                   date_func(my_data_p$date, my_data_p$p_percent_normal, test_date$test_date_value)
@@ -192,5 +174,5 @@ shinyServer(function(input, output, session){
                 
                 test_date <- reactiveValues(test_date_value = "1930-05-01")
                 #
-                
+
 })
