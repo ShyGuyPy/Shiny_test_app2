@@ -28,12 +28,17 @@ black <- "background-color: black"
 #   path_g <- "/Users/lukevawter/Desktop/R/2018drex/input/ts/state/i_a1b/va_shenandoah_gw.csv"
 # }
 
-path_p <- paste0(ts_path,"va_shenandoah_p.csv")
-path_q <- paste0(ts_path,"va_shenandoah_q.csv")
-path_s <- paste0(ts_path,"va_shenandoah_stor.csv")
-path_g <- paste0(ts_path,"va_shenandoah_gw.csv")
-# 
-my_data_p = fread(path_p)
-my_data_q = fread(path_q)
-my_data_s = fread(path_s)
-my_data_g = fread(path_g)
+# path_p <- paste0(ts_path,"va_shenandoah_p.csv")
+# path_q <- paste0(ts_path,"va_shenandoah_q.csv")
+# path_s <- paste0(ts_path,"va_shenandoah_stor.csv")
+# path_g <- paste0(ts_path,"va_shenandoah_gw.csv")
+# # 
+# my_data_p = fread(path_p)
+# my_data_q = fread(path_q)
+# my_data_s = fread(path_s)
+# my_data_g = fread(path_g)
+
+my_data_p <-fread(paste(ts_path, "va_shenandoah_p.csv", sep = ""))
+my_data_q = fread(paste(ts_path,"va_shenandoah_q.csv", sep = ""))
+my_data_s = fread(paste(ts_path,"va_shenandoah_stor.csv", sep = ""))
+my_data_g = fread(paste(ts_path,"va_shenandoah_gw.csv", sep = ""))
