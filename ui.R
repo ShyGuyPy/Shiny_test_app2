@@ -27,7 +27,8 @@ dashboardPage(
     width = 4,
     htmlOutput(outputId = "boxes2")
     #"NoVa: Drought Watch; Shenandoah: Drought Emergency")
-  )
+  ),
+  tags$script(src = "test.js")
   
   
     
