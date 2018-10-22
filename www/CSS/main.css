@@ -14,18 +14,24 @@ font-size:10px;
   color: green;
 }*/
 .topbox_main{
-  width:250px;
+  width:180px;
+  
+ 
 }
 .topbox1 {
   /*float: left;*/
-  width:60px;
-  padding-bottom : 40%;
+  display:inline-block;
+  width:30%;
+  position:relative;
+  
 
 }
 .topbox2 {
   /*float: right;*/
-  width:60px;
-  padding-bottom : 40%;
+  display:inline-block;
+  position:relative;
+  width:30%;
+  
  
 }
 .square {
@@ -40,7 +46,10 @@ font-size:10px;
 
 .content {
     position:absolute;
-    font-size:12px;
+    float:left;
+    margin: 0;
+    padding: 0;
+    font-size:10px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:white;

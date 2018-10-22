@@ -131,32 +131,63 @@ shinyServer(function(input, output, session){
                 })
                 
                 output$boxes2  <- renderUI({
-                  div(class="topbox2", 
-                      div(class="square", style="background-color:yellow",
-                          div(class="content",
-                              div(class="table",
-                                  div(class="table-cell",
-                                      p("P")
-                                  )))),
-                      div(class="square", style="background-color:orange",
-                          div(class="content",
-                              div(class="table",
-                                  div(class="table-cell",
-                                      p("GW")
-                                  )))),
-                      div(class="square", style="background-color:red",
-                          div(class="content",
-                              div(class="table",
-                                  div(class="table-cell",
-                                      p("SW")
-                                  )))),
-                      div(class="square", style="background-color:green",
-                          div(class="content",
-                              div(class="table",
-                                  div(class="table-cell",
-                                      p("R")
-                                  ))))
-                  ) #end of topbox2
+                  div(class="topbox_main",
+                    div(class="topbox1",
+                        div(class="square", style=precip_value(),#"background-color:yellow"
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("P")
+                                    )))), 
+                        div(class="square", style=g_value(),#"background-color:red",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("GW")
+                                    )))),
+                        div(class="square", style=s_value(),#"background-color:green",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("SW")
+                                    )))),
+                        div(class="square", style=q_value(),#"background-color:orange",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("R")
+                                    ))))
+                    ), #end of topbox1
+                    div(class="topbox2", 
+                        div(class="square", style="background-color:yellow",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("P")
+                                    )))),
+                        div(class="square", style="background-color:orange",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("GW")
+                                    )))),
+                        div(class="square", style="background-color:red",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("SW")
+                                    )))),
+                        div(class="square", style="background-color:green",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("R")
+                                    ))))
+                    ) #end of topbox2
+                  ) #end of topbox_main
+                div(class="topbox1",
+                    div(class= "square"
+                        ))   
                 })
                 
                 output$test_output1  <- renderUI({
