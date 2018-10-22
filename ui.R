@@ -27,7 +27,10 @@ dashboardPage(
     width = 6,
     htmlOutput(outputId = "boxes2")
     #"NoVa: Drought Watch; Shenandoah: Drought Emergency")
-  )
+  ),
+  leafletOutput("mymap", height =200),
+  
+  tags$script(src = "test.js")
   
   
     
