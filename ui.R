@@ -17,14 +17,14 @@ dashboardPage(
   #htmlOutput(outputId = "boxes"),
   htmlOutput(outputId = "test_output1"),
   box(
-    title = "Shen DROUGHT STATUS",
-    width = 4,
+    title = "MARYLAND",
+    width = 6,
     htmlOutput(outputId = "boxes")#,
     #tags$p("Western region: Drought Watch; Central region: Drought Warning")
     ),
   box(
-    title = "NoVa DROUGHT STATUS",
-    width = 4,
+    title = "VIRGINIA",
+    width = 6,
     htmlOutput(outputId = "boxes2")
     #"NoVa: Drought Watch; Shenandoah: Drought Emergency")
   )

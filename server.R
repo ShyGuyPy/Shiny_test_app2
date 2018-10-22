@@ -103,25 +103,25 @@ shinyServer(function(input, output, session){
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("p")
+                                          p("P")
                                       )))), 
                           div(class="square", style=g_value(),#"background-color:red",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("g")
+                                          p("GW")
                                       )))),
-                          div(class="square", style=q_value(),#"background-color:green",
+                          div(class="square", style=s_value(),#"background-color:green",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("q")
+                                          p("SW")
                                       )))),
-                          div(class="square", style=s_value(),#"background-color:orange",
+                          div(class="square", style=q_value(),#"background-color:orange",
                               div(class="content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("s")
+                                          p("R")
                                       ))))
                       )#, #end of topbox1
                      
@@ -136,25 +136,25 @@ shinyServer(function(input, output, session){
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
-                                      p("precipitation deficit")
+                                      p("P")
                                   )))),
                       div(class="square", style="background-color:orange",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
-                                      p("ground water wells")
+                                      p("GW")
                                   )))),
                       div(class="square", style="background-color:red",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
-                                      p("reservoir flow")
+                                      p("SW")
                                   )))),
                       div(class="square", style="background-color:green",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
-                                      p("streamflow")
+                                      p("R")
                                   ))))
                   ) #end of topbox2
                 })
