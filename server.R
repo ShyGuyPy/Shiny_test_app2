@@ -183,11 +183,16 @@ shinyServer(function(input, output, session){
                                     div(class="table-cell",
                                         p("R")
                                     ))))
-                    ) #end of topbox2
+                    ), #end of topbox2
+                    div(class="topbox1",
+                        div(class="square", style="background-color:grey",
+                            div(class="content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p("12")
+                                    )))))
                   ) #end of topbox_main
-                div(class="topbox1",
-                    div(class= "square"
-                        ))   
+          
                 })
                 
                 output$test_output1  <- renderUI({
