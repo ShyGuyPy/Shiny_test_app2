@@ -21,6 +21,21 @@ dashboardPage(
     column(
       width = 8,
       box(
+        title=NULL,
+        width=NULL,
+        htmlOutput(outputId = "vbox")
+      ),
+      box(
+        title=NULL,
+        width=NULL,
+        htmlOutput(outputId = "vbox2")
+      ),
+      box(
+        title=NULL,
+        width=NULL,
+        htmlOutput(outputId = "vbox3")
+      ),
+      box(
         title = "MARYLAND",
         width = NULL,
         htmlOutput(outputId = "boxes")#,

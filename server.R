@@ -95,7 +95,56 @@ shinyServer(function(input, output, session){
                     TRUE ~ black
                   )
                 })
-              
+                
+                
+                output$vbox <- renderUI({
+                  div(class="longbox",
+                      div(class="squarev", style = red,
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell")))),
+                      div(class="vbox", style = "background-color:white",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p(class = "p1","Some more text to show how it will look")
+                                  ))))
+                  )
+
+                })
+                
+                output$vbox2 <- renderUI({
+                  div(class="longbox",
+                      div(class="squarev", style = yellow,
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell")))),
+                      div(class="vbox", style = "background-color:white",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p(class = "p1","Some other text to show how it will look")
+                                  ))))
+                  )
+                  
+                })
+                
+                output$vbox3 <- renderUI({
+                  div(class="longbox",
+                      div(class="squarev", style = green,
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell")))),
+                      div(class="vbox", style = "background-color:white",
+                          div(class="content",
+                              div(class="table",
+                                  div(class="table-cell",
+                                      p(class = "p1","Some different text to show how it will look")
+                                  ))))
+                  )
+                  
+                })
+                
                 output$boxes  <- renderUI({
                   #div(class="topbox_main",
                       div(class="topbox1",
