@@ -23,17 +23,17 @@ dashboardPage(
       box(
         title=NULL,
         width=NULL,
-        htmlOutput(outputId = "vbox")
+        htmlOutput(outputId = "ibox")
       ),
       box(
         title=NULL,
         width=NULL,
-        htmlOutput(outputId = "vbox2")
+        htmlOutput(outputId = "ibox2")
       ),
       box(
         title=NULL,
         width=NULL,
-        htmlOutput(outputId = "vbox3")
+        htmlOutput(outputId = "ibox3")
       ),
       box(
         title = "MARYLAND",

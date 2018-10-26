@@ -97,13 +97,13 @@ shinyServer(function(input, output, session){
                 })
                 
                 
-                output$vbox <- renderUI({
+                output$ibox <- renderUI({
                   div(class="longbox",
-                      div(class="squarev", style = red,
+                      div(class="squarei", style = red,
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell")))),
-                      div(class="vbox", style = "background-color:white",
+                      div(class="ibox", style = "background-color:white",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
@@ -113,13 +113,13 @@ shinyServer(function(input, output, session){
 
                 })
                 
-                output$vbox2 <- renderUI({
+                output$ibox2 <- renderUI({
                   div(class="longbox",
-                      div(class="squarev", style = yellow,
+                      div(class="squarei", style = yellow,
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell")))),
-                      div(class="vbox", style = "background-color:white",
+                      div(class="ibox", style = "background-color:white",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
@@ -129,13 +129,13 @@ shinyServer(function(input, output, session){
                   
                 })
                 
-                output$vbox3 <- renderUI({
+                output$ibox3 <- renderUI({
                   div(class="longbox",
-                      div(class="squarev", style = green,
+                      div(class="squarei", style = green,
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell")))),
-                      div(class="vbox", style = "background-color:white",
+                      div(class="ibox", style = "background-color:white",
                           div(class="content",
                               div(class="table",
                                   div(class="table-cell",
