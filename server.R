@@ -100,13 +100,13 @@ shinyServer(function(input, output, session){
                 output$ibox <- renderUI({
                   div(class="longbox",
                       div(class="squarei", style = red,
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell",
                                       p(style= "font-color:white;", "Normal")
                                       )))),
                       div(class="ibox", style = "background-color:white",
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell",
                                       p(class = "p1","Some more text to show how it will look")
@@ -118,11 +118,11 @@ shinyServer(function(input, output, session){
                 output$ibox2 <- renderUI({
                   div(class="longbox",
                       div(class="squarei", style = yellow,
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell")))),
                       div(class="ibox", style = "background-color:white",
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell",
                                       p(class = "p1","Some other text to show how it will look")
@@ -134,11 +134,11 @@ shinyServer(function(input, output, session){
                 output$ibox3 <- renderUI({
                   div(class="longbox",
                       div(class="squarei", style = green,
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell")))),
                       div(class="ibox", style = "background-color:white",
-                          div(class="content",
+                          div(class="my_content",
                               div(class="table",
                                   div(class="table-cell",
                                       p(class = "p1","Some different text to show how it will look")
@@ -151,25 +151,25 @@ shinyServer(function(input, output, session){
                   #div(class="topbox_main",
                       div(class="topbox1",
                           div(class="square", style=precip_value(),#"background-color:yellow"
-                              div(class="content",
+                              div(class="my_content",
                                   div(class="table",
                                       div(class="table-cell",
                                           p("P")
                                       )))), 
                           div(class="square", style=g_value(),#"background-color:red",
-                              div(class="content",
+                              div(class="my_content",
                                   div(class="table",
                                       div(class="table-cell",
                                           p("GW")
                                       )))),
                           div(class="square", style=s_value(),#"background-color:green",
-                              div(class="content",
+                              div(class="my_content",
                                   div(class="table",
                                       div(class="table-cell",
                                           p("SW")
                                       )))),
                           div(class="square", style=q_value(),#"background-color:orange",
-                              div(class="content",
+                              div(class="my_content",
                                   div(class="table",
                                       div(class="table-cell",
                                           p("R")
@@ -185,63 +185,82 @@ shinyServer(function(input, output, session){
                   div(class="topbox_main",
                     div(class="topbox1",
                         div(class="square", style=precip_value(),#"background-color:yellow"
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("P")
                                     )))), 
                         div(class="square", style=g_value(),#"background-color:red",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("GW")
                                     )))),
                         div(class="square", style=s_value(),#"background-color:green",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("SW")
                                     )))),
                         div(class="square", style=q_value(),#"background-color:orange",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("R")
+                                    )))),
+                        div(class="ibox", style = "background-color:white",
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p(class = "p3",paste0("Shenandoah "))#,text_stage2))
                                     ))))
                     ), #end of topbox1
                     div(class="topbox2", 
                         div(class="square", style="background-color:yellow",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("P")
                                     )))),
                         div(class="square", style="background-color:orange",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("GW")
                                     )))),
                         div(class="square", style="background-color:red",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("SW")
                                     )))),
                         div(class="square", style="background-color:green",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("R")
+                                    )))),
+                        div(class="ibox", style = "background-color:white",
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p(class = "p3",paste0("NoVa "))#,text_stage2))
                                     ))))
                     ), #end of topbox2
-                    div(class="topbox1",
+                    div(class="sidebox",
+                        div(class="ibox", style = "background-color:white",
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell",
+                                        p(class = "p1","Flow forecast: ")
+                                    )))),
                         div(class="square", style="background-color:grey",
-                            div(class="content",
+                            div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
                                         p("12")
-                                    )))))
+                                    ))))
+                        ) #end of sidebox
                   ) #end of topbox_main
           
                 })

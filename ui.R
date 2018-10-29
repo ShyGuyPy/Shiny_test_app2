@@ -19,7 +19,7 @@ dashboardPage(
   htmlOutput(outputId = "test_output1"),
   fluidRow(
     column(
-      width = 8,
+      width = 6,
       box(
         title=NULL,
         width=NULL,

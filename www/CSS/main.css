@@ -14,14 +14,16 @@ font-size:10px;
   color: green;
 }*/
 .topbox_main{
-  width:180px;
+  /*width:180px;*/
+ 
+  
   
  
 }
 .topbox1 {
   /*float: left;*/
   display:inline-block;
-  width:30%;
+  width:25%;
   position:relative;
   
 
@@ -30,7 +32,14 @@ font-size:10px;
   /*float: right;*/
   display:inline-block;
   position:relative;
-  width:30%;
+  width:25%;
+}
+
+.sidebox {
+  display:inline-block;
+  position:relative;
+  width:20%;
+  height: 50px;
 }
  
 .longbox  {
@@ -44,6 +53,10 @@ font-size:10px;
   
 }
 
+.p3 {
+  color:black;
+  font-size:7px;
+}
 
 .ibox {
   display:inline-block;
@@ -76,7 +89,7 @@ font-size:10px;
     /*background-color:red;*/
 }
 
-.content {
+.my_content {
     position:absolute;
     float:left;
     margin: 0;
