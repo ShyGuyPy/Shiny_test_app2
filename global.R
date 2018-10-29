@@ -6,7 +6,7 @@ source("code/functions/date_func.R", local = TRUE)
 #precip_value <-"background-color:green"
 #potato <- "background-color:navy"
 #data_index = 1
-green <- "background-color:green"
+green <- "background-color:#009000"
 yellow <- "background-color:yellow"
 orange <- "background-color:orange"
 red <- "background-color:red"
