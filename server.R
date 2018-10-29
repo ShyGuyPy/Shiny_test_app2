@@ -248,11 +248,11 @@ shinyServer(function(input, output, session){
                                     ))))
                     ), #end of topbox2
                     div(class="sidebox",
-                        div(class="ibox", style = "background-color:white",
+                        div(class="square", style = "background-color:white",
                             div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
-                                        p(class = "p1","Flow forecast: ")
+                                        p(class="p3",style="font-size:6px","Flow forecast: ")
                                     )))),
                         div(class="square", style="background-color:grey",
                             div(class="my_content",
