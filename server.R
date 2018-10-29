@@ -102,7 +102,9 @@ shinyServer(function(input, output, session){
                       div(class="squarei", style = red,
                           div(class="content",
                               div(class="table",
-                                  div(class="table-cell")))),
+                                  div(class="table-cell",
+                                      p(style= "font-color:white;", "Normal")
+                                      )))),
                       div(class="ibox", style = "background-color:white",
                           div(class="content",
                               div(class="table",

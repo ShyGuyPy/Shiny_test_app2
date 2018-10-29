@@ -23,16 +23,19 @@ dashboardPage(
       box(
         title=NULL,
         width=NULL,
+        height=50,
         htmlOutput(outputId = "ibox")
       ),
       box(
         title=NULL,
         width=NULL,
+        height=50,
         htmlOutput(outputId = "ibox2")
       ),
       box(
         title=NULL,
         width=NULL,
+        height=50,
         htmlOutput(outputId = "ibox3")
       ),
       box(
