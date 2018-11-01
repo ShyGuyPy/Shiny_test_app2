@@ -102,13 +102,13 @@ shinyServer(function(input, output, session){
                       div(class="squarei", style = red,
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell",
+                                  div(class="table-cell2",
                                       p(style= "font-color:white;", "Normal")
                                       )))),
                       div(class="ibox", style = "background-color:white",
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell",
+                                  div(class="table-cell2",
                                       p(class = "p1","Some more text to show how it will look")
                                   ))))
                   )
@@ -120,11 +120,11 @@ shinyServer(function(input, output, session){
                       div(class="squarei", style = yellow,
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell")))),
+                                  div(class="table-cell2")))),
                       div(class="ibox", style = "background-color:white",
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell",
+                                  div(class="table-cell2",
                                       p(class = "p1","Some other text to show how it will look")
                                   ))))
                   )
@@ -136,11 +136,11 @@ shinyServer(function(input, output, session){
                       div(class="squarei", style = green,
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell")))),
+                                  div(class="table-cell2")))),
                       div(class="ibox", style = "background-color:white",
                           div(class="my_content",
                               div(class="table",
-                                  div(class="table-cell",
+                                  div(class="table-cell2",
                                       p(class = "p1","Some different text to show how it will look")
                                   ))))
                   )

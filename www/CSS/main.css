@@ -13,6 +13,16 @@ font-size:10px;
 /*h1{
   color: green;
 }*/
+
+.shiny-html-output {
+
+} 
+
+.shiny-plot-output {
+  
+}
+
+
 .topbox_main{
   /*width:180px;*/
  
@@ -111,10 +121,21 @@ font-size:10px;
     display:table;
     height:100%;
     width:100%;
+    
 }
 .table-cell{
     display:table-cell;
     vertical-align:middle;
+    height:45px;/*100%;*/
+    width:50px;/*100%;*/
+    text-align:center;
+    background-color:silver;
+}
+
+.table-cell2{
+    display:table-cell;
+    vertical-align:middle;
     height:100%;
     width:100%;
+    text-align:center;
 }
