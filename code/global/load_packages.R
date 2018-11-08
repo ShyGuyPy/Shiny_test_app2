@@ -17,7 +17,8 @@ need <- c("shiny",
           "lubridate",
           "pryr",
           "zoo",
-          "leaflet") 
+          "leaflet",
+          "rgdal") 
 # find out which packages are installed
 ins <- installed.packages()[, 1] 
 # check if the needed packages are installed
