@@ -1,7 +1,9 @@
 shinyServer(function(input, output, session){
 #eventReactive(input$date,
               output$date_text  <- renderText({
-                paste("Today's date is", as.character(test_date$test_date_value))
+                #str_pad(str_c("Today's date is ", as.character(test_date$test_date_value)), width = 50, side = "right", pad=" ")
+                str_c(str_pad(str_c("Today's date is", as.character(test_date$test_date_value), sep= " "), width = 30, side = "right", pad= " "),
+                " ")
               })
 #   output$date_text <- renderText(as.character(input$date)))
             

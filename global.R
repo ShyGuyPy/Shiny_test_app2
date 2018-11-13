@@ -14,21 +14,21 @@ navy <- "background-color:navy"
 black <- "background-color: black"
 
 #DROUGHT REGIONS
-eastern_region = readOGR(dsn=map_path, layer = "eastern-region")
-
-eastern_region_border = readOGR(dsn=map_path, layer = "eastern-region-border")
-
-clipsouthern3 = readOGR(dsn=map_path, layer = "clipsouthern3")
-
-wssc_service = readOGR(dsn=map_path, layer = "wssc service")
-
-clipcentral = readOGR(dsn=map_path, layer = "clipcentral")
-
-baltimore_service = readOGR(dsn=map_path, layer = "baltimore service")
-
-clipcentral_border = readOGR(dsn=map_path, layer = "clipcentral-border")
-
-clipsouthern_border = readOGR(dsn=map_path, layer = "clipsouthern-border")
+# eastern_region = readOGR(dsn=map_path, layer = "eastern-region")
+# 
+# eastern_region_border = readOGR(dsn=map_path, layer = "eastern-region-border")
+# 
+# clipsouthern3 = readOGR(dsn=map_path, layer = "clipsouthern3")
+# 
+# wssc_service = readOGR(dsn=map_path, layer = "wssc service")
+# 
+# clipcentral = readOGR(dsn=map_path, layer = "clipcentral")
+# 
+# baltimore_service = readOGR(dsn=map_path, layer = "baltimore service")
+# 
+# clipcentral_border = readOGR(dsn=map_path, layer = "clipcentral-border")
+# 
+# clipsouthern_border = readOGR(dsn=map_path, layer = "clipsouthern-border")
 
 
 
