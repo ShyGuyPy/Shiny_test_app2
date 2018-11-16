@@ -13,6 +13,16 @@ red <- "background-color:red"
 navy <- "background-color:navy"
 black <- "background-color: black"
 
+western_central = readOGR(dsn=map_path, layer = "western_central")
+
+clipcentral = readOGR(dsn=map_path, layer = "clipcentral")
+
+western_dslv = readOGR(dsn=map_path, layer = "western_dslv")
+
+clipcentral_t <- spTransform(clipcentral, CRS("+init=epsg:4326"))
+
+western_region_t <- spTransform(western_dslv, CRS("+init=epsg:4326"))
+
 #DROUGHT REGIONS
 # eastern_region = readOGR(dsn=map_path, layer = "eastern-region")
 # 

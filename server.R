@@ -295,10 +295,15 @@ shinyServer(function(input, output, session){
                
                 
                 output$mymap <- renderLeaflet({
-                m <- leaflet( options = leafletOptions(minZoom = 0, maxZoom = 6)) %>%
-                  addTiles() %>%  # Add default OpenStreetMap map tiles
-                  addMarkers(lng=-77.01293195597827, lat=38.987549813483675, popup="Home")
-                m  # Print the map
+                c_color=red
+                w_color=yellow
+                leaflet() %>%
+                  addPolygons(data = clipcentral_t, color="black", fillColor = "red", opacity = 1) %>%
+                  addPolygons(data = western_region_t, color="black", fillColor = yellow, opacity = 1)# %>%
+                 
+                  
+                
+                                
                 })
 
 })
