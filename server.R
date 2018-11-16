@@ -236,7 +236,7 @@ shinyServer(function(input, output, session){
                                     div(class="table-cell",
                                         p("SW")
                                     )))),
-                        div(class="square", style="background-color:green",
+                        div(class="square", style=green,#"background-color:green",
                             div(class="my_content",
                                 div(class="table",
                                     div(class="table-cell",
@@ -295,11 +295,13 @@ shinyServer(function(input, output, session){
                
                 
                 output$mymap <- renderLeaflet({
-                c_color=red
-                w_color=yellow
+                c_color= map_green
+                w_color= map_yellow
                 leaflet() %>%
-                  addPolygons(data = clipcentral_t, color="black", fillColor = "red", opacity = 1) %>%
-                  addPolygons(data = western_region_t, color="black", fillColor = yellow, opacity = 1)# %>%
+                  addPolygons(data = clipcentral_t, color="black", fillColor = c_color, opacity = 1, weight = 1,
+                              fillOpacity = 1) %>%
+                  addPolygons(data = western_region_t, color="black", fillColor = w_color, opacity = 1, weight= 1,
+                              fillOpacity = 1)# %>%
                  
                   
                 

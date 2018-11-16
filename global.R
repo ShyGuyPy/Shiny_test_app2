@@ -13,6 +13,11 @@ red <- "background-color:red"
 navy <- "background-color:navy"
 black <- "background-color: black"
 
+map_green <- "#5CC33D"
+map_yellow <- "yellow"
+map_orange <- "orange"
+map_red <- "red"
+
 western_central = readOGR(dsn=map_path, layer = "western_central")
 
 clipcentral = readOGR(dsn=map_path, layer = "clipcentral")
