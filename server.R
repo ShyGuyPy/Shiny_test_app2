@@ -200,7 +200,7 @@ shinyServer(function(input, output, session){
                 output$mymap <- renderLeaflet({
                   c_color= map_green
                   w_color= map_yellow
-                  leaflet() %>%
+                  leaflet(options= leafletOptions(minZoom = 6.5, maxZoom=6.5, zoomControl=FALSE))%>%
                     addPolygons(data = clipcentral_t, color="black", fillColor = c_color, opacity = 1, weight = 1,
                                 fillOpacity = 1) %>%
                     addPolygons(data = western_region_t, color="black", fillColor = w_color, opacity = 1, weight= 1,
