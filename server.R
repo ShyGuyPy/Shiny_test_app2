@@ -246,6 +246,14 @@ shinyServer(function(input, output, session){
                                           p(class = "p5",paste0("Shenandoah "))#,text_stage2))
                                       ))))
                           ), #end of topbox1
+                      
+                      div(class="topboxmiddle",
+                          div(class="tallsquare", style="background-color:white",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell"
+                                      ))))
+                      ),
                           div(class="topbox2", 
                               div(class="square", style=red,
                                   div(class="my_content",
@@ -279,6 +287,13 @@ shinyServer(function(input, output, session){
                                           ))))
                               
                           ), #end of topbox2
+                      div(class="topboxmiddle",
+                          div(class="tallsquare", style="background-color:white",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell"
+                                      ))))
+                      ),
                           div(class="sidebox",
                               div(class="squareside1", style = "background-color:white",
                                   div(class="my_content",
