@@ -169,8 +169,27 @@ shinyServer(function(input, output, session){
                   ) # end div(class="longbox"
                 }) # end renderUI
                 
+                output$MD_title <- renderUI({
+                  div(p(class= "title","MARYLAND DROUGHT STATUS"))
+                })
+                
                 output$boxes  <- renderUI({
-                  div(class="topbox_main", p(class= "title","MARYLAND DROUGHT STATUS"),
+                div(class="topbox_main", 
+                    div(class="mapbox", #p(class= "title","MARYLAND DROUGHT STATUS"),
+                        div(class="tallsquare", style="background-color:white",
+                                div(class="my_content",
+                                    div(class="table",
+                                        div(class="table-cell"
+                                        ))))
+                        ),
+                    
+                    div(class="topboxmiddle",
+                        div(class="tallsquare", style="background-color:white",
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell"
+                                    ))))
+                    ),
                       #the image link below is a placeholder for an interactive leaflet map forthcoming
                       
                       #img( src="https://md.water.usgs.gov/drought/MDE-Drought2017-02-28.png", height="160px", width="360px"),
@@ -192,7 +211,8 @@ shinyServer(function(input, output, session){
                                           p(style="font-size:15px;", "11.5")
                                       ))))
                       ) #end of sidebox
-                  ) #end of topbox_main
+                  ) #end of topboxmain
+                
                   
                 })
                 

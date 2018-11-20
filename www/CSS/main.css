@@ -37,6 +37,14 @@ li {
   margin:0;
   padding:0;
 }
+.mapbox {
+  display:inline-block;
+  background:purple;
+  width:300px;
+  height:150px;
+  
+}
+
 
 .topbox_main{
   background:red;
@@ -133,6 +141,7 @@ p {
     margin:0;
     padding:0;
 }
+
 
 .squareside1 {
     /*float:left;*/
