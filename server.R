@@ -100,171 +100,200 @@ shinyServer(function(input, output, session){
                 
                 
                 output$ibox <- renderUI({
-                  div(class="longbox",
-                      div(class="squarei", style = red,
-                          div(class="my_content",
-                              div(class="table",
-                                  div(class="table-cell2",
-                                      p(style= "font-color:white;", "Normal")
-                                      )))),
-                      div(class="ibox", style = "background-color:white",
-                          div(class="my_content",
-                              div(class="table",
-                                  div(class="table-cell2",
-                                      p(class = "p1","Some more text to show how it will look")
-                                  ))))
-                  )
-
-                })
+                #   div(class="longbox",
+                #       div(class="squarei", style = red,
+                #           div(class="my_content",
+                #               div(class="table",
+                #                   div(class="table-cell2",
+                #                       p(style= "font-color:white;", "Normal")
+                #                       )))),
+                #       div(class="ibox", style = "background-color:white",
+                #           div(class="my_content",
+                #               div(class="table",
+                #                   div(class="table-cell2",
+                #                       p(class = "p1","Some more text to show how it will look")
+                #                   ))))
+                #   )
+                # 
+                # })
+                    div(class="longbox",
+                        div(class="ibox", style = "background-color:silver",
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell2",
+                                        p(class = "p1",paste0("CO-OP operations status "))#,text_stage2))
+                                    )))),
+                        div(class="squarei", style = yellow,#color_stage,
+                            div(class="my_content",
+                                div(class="table",
+                                    div(class="table-cell2",
+                                        p(class="p2","coop placeholder output")#text_stage)
+                                    ))))
+                        
+                    ) # end div(class="longbox" 
+                  }) # end renderUI
                 
                 output$ibox2 <- renderUI({
                   div(class="longbox",
-                      div(class="squarei", style = yellow,
-                          div(class="my_content",
-                              div(class="table",
-                                  div(class="table-cell2")))),
-                      div(class="ibox", style = "background-color:white",
+                      div(class="ibox", style = "background-color:silver",
                           div(class="my_content",
                               div(class="table",
                                   div(class="table-cell2",
-                                      p(class = "p1","Some other text to show how it will look")
+                                      p(class = "p1",paste0("LFAA stage"))#"Little Falls adj. flow, MGD "))#,text_stage2))
+                                  )))),
+                      div(class="squarei", style = red,#color_stage,
+                          div(class="my_content",
+                              div(class="table",
+                                  div(class="table-cell2",
+                                      p(class="p2","lfaa placeholder output")#text_stage)
                                   ))))
-                  )
-                  
-                })
+                      
+                  ) # end div(class="longbox"
+                }) # end renderUI
                 
                 output$ibox3 <- renderUI({
                   div(class="longbox",
-                      div(class="squarei", style = green,
-                          div(class="my_content",
-                              div(class="table",
-                                  div(class="table-cell2")))),
-                      div(class="ibox", style = "background-color:white",
+                      div(class="ibox", style = "background-color:silver",
                           div(class="my_content",
                               div(class="table",
                                   div(class="table-cell2",
-                                      p(class = "p1","Some different text to show how it will look")
+                                      p(class = "p1",paste0("MWCOG stage"))#"Little Falls adj. flow, MGD "))#,text_stage2))
+                                  )))),
+                      div(class="squarei", style = green,#color_stage,
+                          div(class="my_content",
+                              div(class="table",
+                                  div(class="table-cell2",
+                                      p(class="p2","mwcog placeholder output")#text_stage)
                                   ))))
-                  )
-                  
-                })
+                      
+                  ) # end div(class="longbox"
+                }) # end renderUI
                 
                 output$boxes  <- renderUI({
-                  #div(class="topbox_main",
-                      div(class="topbox1",
-                          div(class="square", style=precip_value(),#"background-color:yellow"
+                  div(class="topbox_main", p(class= "title","MARYLAND DROUGHT STATUS"),
+                      #the image link below is a placeholder for an interactive leaflet map forthcoming
+                      
+                      #img( src="https://md.water.usgs.gov/drought/MDE-Drought2017-02-28.png", height="160px", width="360px"),
+                      
+                      
+                      #this is html in a format taht shiny will accept.  This along with main.css structures the 
+                      #properties of the Maryland Drought Status section
+                      div(class="sidebox",
+                          div(class="squareside1", style = "background-color:white",
                               div(class="my_content",
                                   div(class="table",
                                       div(class="table-cell",
-                                          p("P")
-                                      )))), 
-                          div(class="square", style=g_value(),#"background-color:red",
-                              div(class="my_content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("GW")
+                                          p(class="p3","Flow benefit, MGD")
                                       )))),
-                          div(class="square", style=s_value(),#"background-color:green",
+                          div(class="squareside2", style="background-color:silver",
                               div(class="my_content",
                                   div(class="table",
-                                      div(class="table-cell",
-                                          p("SW")
-                                      )))),
-                          div(class="square", style=q_value(),#"background-color:orange",
-                              div(class="my_content",
-                                  div(class="table",
-                                      div(class="table-cell",
-                                          p("R")
+                                      div(class="table-cell3", #style="text-align:right;",
+                                          p(style="font-size:15px;", "11.5")
                                       ))))
-                      )#, #end of topbox1
-                     
-                  #) #end of topbox-main
+                      ) #end of sidebox
+                  ) #end of topbox_main
                   
-
                 })
                 
+                
+                output$mymap <- renderLeaflet({
+                  c_color= map_green
+                  w_color= map_yellow
+                  leaflet() %>%
+                    addPolygons(data = clipcentral_t, color="black", fillColor = c_color, opacity = 1, weight = 1,
+                                fillOpacity = 1) %>%
+                    addPolygons(data = western_region_t, color="black", fillColor = w_color, opacity = 1, weight= 1,
+                                fillOpacity = 1)# %>%
+                  
+                  
+                  
+                  
+                })
+                
+                
                 output$boxes2  <- renderUI({
-                  div(class="topbox_main",
-                    div(class="topbox1",
-                        div(class="square", style=precip_value(),#"background-color:yellow"
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("P")
-                                    )))), 
-                        div(class="square", style=g_value(),#"background-color:red",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("GW")
-                                    )))),
-                        div(class="square", style=s_value(),#"background-color:green",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("SW")
-                                    )))),
-                        div(class="square", style=q_value(),#"background-color:orange",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("R")
-                                    )))),
-                        div(class="ibox", style = "background-color:white",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p(class = "p3",paste0("Shenandoah "))#,text_stage2))
-                                    ))))
-                    ), #end of topbox1
-                    div(class="topbox2", 
-                        div(class="square", style="background-color:yellow",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("P")
-                                    )))),
-                        div(class="square", style="background-color:orange",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("GW")
-                                    )))),
-                        div(class="square", style="background-color:red",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("SW")
-                                    )))),
-                        div(class="square", style=green,#"background-color:green",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("R")
-                                    )))),
-                        div(class="ibox", style = "background-color:white",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p(class = "p3",paste0("NoVa "))#,text_stage2))
-                                    ))))
-                    ), #end of topbox2
-                    div(class="sidebox",
-                        div(class="square", style = "background-color:white",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p(class="p3",style="font-size:6px","Flow forecast: ")
-                                    )))),
-                        div(class="square", style="background-color:grey",
-                            div(class="my_content",
-                                div(class="table",
-                                    div(class="table-cell",
-                                        p("12")
-                                    ))))
-                        ) #end of sidebox
-                  ) #end of topbox_main
-          
+                  div(class="topbox_main", p(class= "title", "VIRGINIA DROUGHT STATUS"),
+                      div(class="topbox1", 
+                          div(class="square", style=orange,#"background-color:yellow"
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p(class="p4","P")
+                                      )))), 
+                          div(class="square", style=red,#"background-color:red",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p(class="p4","GW")
+                                      )))),
+                          div(class="square", style=green,#"background-color:orange",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p(class="p4","SW")
+                                      )))),
+                          div(class="square", style=yellow,#"background-color:green",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p(class="p4","R")
+                                      )))),
+                          div(class="ibox", style = "background-color:white",
+                              div(class="my_content",
+                                  div(class="table",
+                                      div(class="table-cell",
+                                          p(class = "p5",paste0("Shenandoah "))#,text_stage2))
+                                      ))))
+                          ), #end of topbox1
+                          div(class="topbox2", 
+                              div(class="square", style=red,
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class="p4","P")
+                                          )))),
+                              div(class="square", style=green,
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class="p4","GW")
+                                          )))),
+                              div(class="square", style=yellow,
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class="p4","SW")
+                                          )))),
+                              div(class="square", style=orange,
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class="p4","R")
+                                          )))),
+                              div(class="ibox", style = "background-color:white",
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class = "p5",paste0("NoVa "))#,text_stage2))
+                                          ))))
+                              
+                          ), #end of topbox2
+                          div(class="sidebox",
+                              div(class="squareside1", style = "background-color:white",
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell",
+                                              p(class="p3","Flow benefit, MGD")
+                                          )))),
+                              div(class="squareside2", style="background-color:silver",
+                                  div(class="my_content",
+                                      div(class="table",
+                                          div(class="table-cell3", #style= "text-align:right",
+                                              p(style="font-size:15px;","12.3")
+                                          ))))
+                          ) #end of sidebox
+                      )#end of topbox_main
                 })
                 
                 output$test_output1  <- renderUI({
@@ -281,31 +310,7 @@ shinyServer(function(input, output, session){
                 })
                 
                 test_date <- reactiveValues(test_date_value = "1930-05-01")
-                #
-                
 
-                
-                # output$mymap <- renderLeaflet({
-                #   m<-leaflet() %>%
-                #     addTiles()
-                # })
-                
-           
-                
                
-                
-                output$mymap <- renderLeaflet({
-                c_color= map_green
-                w_color= map_yellow
-                leaflet() %>%
-                  addPolygons(data = clipcentral_t, color="black", fillColor = c_color, opacity = 1, weight = 1,
-                              fillOpacity = 1) %>%
-                  addPolygons(data = western_region_t, color="black", fillColor = w_color, opacity = 1, weight= 1,
-                              fillOpacity = 1)# %>%
-                 
-                  
-                
-                                
-                })
 
 })

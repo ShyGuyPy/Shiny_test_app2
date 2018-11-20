@@ -39,20 +39,23 @@ dashboardPage(
         htmlOutput(outputId = "ibox3")
       ),
       box(
-        title = "MARYLAND",
+        title = NULL,#"MARYLAND",
         width = NULL,
-        htmlOutput(outputId = "boxes")#,
+        height = 220,
+        htmlOutput(outputId = "boxes"),
         #tags$p("Western region: Drought Watch; Central region: Drought Warning")
+        leafletOutput("mymap", height =150, width = 300)
         ),
       box(
-        title = "VIRGINIA",
+        title = NULL,#"VIRGINIA",
         width = NULL,
+        height = 220,
         htmlOutput(outputId = "boxes2")
         #"NoVa: Drought Watch; Shenandoah: Drought Emergency")
-      ),
-  leafletOutput("mymap", height =200),
+      )
+  
 
-  tags$script(src = "test.js")
+  #tags$script(src = "test.js")
   
   
     ))

@@ -18,7 +18,7 @@ map_yellow <- "yellow"
 map_orange <- "orange"
 map_red <- "red"
 
-western_central = readOGR(dsn=map_path, layer = "western_central")
+#western_central = readOGR(dsn=map_path, layer = "western_central")
 
 clipcentral = readOGR(dsn=map_path, layer = "clipcentral")
 
