@@ -332,13 +332,13 @@ shinyServer(function(input, output, session){
                       )#end of topbox_main
                 })
                 
-                output$test_output1  <- renderUI({
-                  div(style="color:black", paste0("prepic is ", as.character(p_data_percent())),
-                  div(style="color:black", paste0("q is ", as.character(q_data_percent())),
-                  div(style="color:black", paste0("storage is ", as.character(s_data_percent())),
-                  div(style="color:black", paste0("ground water is ", as.character(g_data_percent()))
-                  ))))
-                })
+                # output$test_output1  <- renderUI({
+                #   div(style="color:black", paste0("prepic is ", as.character(p_data_percent())),
+                #   div(style="color:black", paste0("q is ", as.character(q_data_percent())),
+                #   div(style="color:black", paste0("storage is ", as.character(s_data_percent())),
+                #   div(style="color:black", paste0("ground water is ", as.character(g_data_percent()))
+                #   ))))
+                # })
                 
                 
                 observeEvent(input$date, {
