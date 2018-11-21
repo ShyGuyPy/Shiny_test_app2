@@ -47,7 +47,7 @@ dashboardPage(
           leafletOutput("mymap", height =150, width = 300)
         ),
         box(
-        htmlOutput(outputId = "boxes")
+          htmlOutput(outputId = "boxes")
         )
         #tags$p("Western region: Drought Watch; Central region: Drought Warning")
 
