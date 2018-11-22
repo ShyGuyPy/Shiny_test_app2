@@ -175,7 +175,7 @@ shinyServer(function(input, output, session){
                 
                 #MD region 
                 output$boxes  <- renderUI({
-                # div(class="topbox_main",
+                div(class="topbox_main",
                 #     div(class="mapbox", #p(class= "title","MARYLAND DROUGHT STATUS"),
                 #         div(class="tallsquare", style="background-color:white",
                 #                 div(class="my_content",
@@ -211,8 +211,25 @@ shinyServer(function(input, output, session){
                                       div(class="table-cell3", #style="text-align:right;",
                                           p(style="font-size:15px;", "11.5")
                                       ))))
-                      ) #end of sidebox
-                  #) #end of topboxmain
+             
+                      ), #end of sidebox
+                  div(class="MD_right_box", style="float:right",
+                      div(class="keytopbox",
+                          div(class="keysquare",style="background:green",
+                              div(class="p6","NORMAL")
+                          ),
+                          div(class="keysquare",style="background:yellow",
+                              div(class="p6","WATCH")
+                          ),
+                          div(class="keysquare",style="background:orange",
+                              div(class="p6","WARNING")
+                          ),
+                          div(class="keysquare",style="background:red",
+                              div(class="p6","EMERGENCY")
+                          )
+                      )
+                  )
+                  ) #end of topboxmain
                 
                   
                 })
@@ -355,7 +372,23 @@ shinyServer(function(input, output, session){
                                           div(class="table-cell3", #style= "text-align:right",
                                               p(style="font-size:15px;","12.3")
                                           ))))
-                          ) #end of sidebox
+                          ), #end of sidebox
+                      div(class="VA_right_box",style="float:right",
+                          div(class="keytopbox2",
+                              div(class="keysquare2",style="background:white",
+                                  div(class="p6","P = precip")
+                              ),
+                              div(class="keysquare2",style="background:white",
+                                  div(class="p6","GW = ground water")
+                              ),
+                              div(class="keysquare2",style="background:white",
+                                  div(class="p6","SW = surface water")
+                              ),
+                              div(class="keysquare2",style="background:white",
+                                  div(class="p6","R = reservoir")
+                              )
+                          )
+                      )
                       )#end of topbox_main
                 })
                 
