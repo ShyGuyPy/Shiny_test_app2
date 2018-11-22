@@ -234,7 +234,7 @@ shinyServer(function(input, output, session){
                                                                       #"font-style" = "italic",
                                                                       #"box-shadow" = "3px 3px rgba(0,0,0,0.25)",
                                                                       "font-size" = "15px",
-                                                                      "border-color" = "rgba(0,0,0,0.5)",
+                                                                      "border-color" = "white",#"rgba(0,0,0,0.5)",
                                                                       "font-weight" = "bold"
                                                                     ))) %>%
                   # addLabelOnlyMarkers(
@@ -247,7 +247,7 @@ shinyServer(function(input, output, session){
                                                              #"font-style" = "italic",
                                                              #"box-shadow" = "3px 3px rgba(0,0,0,0.25)",
                                                              "font-size" = "15px",
-                                                             "border-color" = "rgba(0,0,0,0.5)",
+                                                             "border-color" = "white",#"rgba(0,0,0,0.5)",
                                                              "font-weight" = "bold"
                                                            )))
                     # addLabelOnlyMarkers(
